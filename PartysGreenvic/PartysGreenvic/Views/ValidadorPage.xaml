@@ -54,6 +54,7 @@
                 BackgroundColor="Navy"
                 BorderRadius="10"
                 HeightRequest="46"
+                IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                 Margin="30,0"
                 Text="Verificar"
                 TextColor="White"
