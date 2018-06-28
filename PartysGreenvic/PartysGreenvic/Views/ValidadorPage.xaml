@@ -32,6 +32,14 @@
                     Text="Rut"
                     VerticalOptions="CenterAndExpand">
                 </Label>
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    Text="Por QR"
+                    VerticalOptions="CenterAndExpand">
+                </Label>
                 <Entry
                     PlaceholderColor="Black"
                     TextColor="Black"
@@ -42,6 +50,17 @@
                     Text="{Binding Rut, Mode=TwoWay}"
                     VerticalOptions="CenterAndExpand">
                 </Entry>
+                <Button
+                    Command="{Binding QRCommand}"
+                    VerticalOptions="Center"
+                    BackgroundColor="DarkGreen"
+                    BorderRadius="10"
+                    HeightRequest="46"
+                    IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                    Margin="20,0"
+                    Text="Escanear QR"
+                    TextColor="White">
+                </Button>
             </Grid>
             <ActivityIndicator
                 IsRunning="{Binding IsRunning, Mode=TwoWay}"
@@ -68,13 +87,6 @@
                 Text="{Binding NombreCommand}"
                 VerticalOptions="CenterAndExpand">
             </Label>
-            <Image
-                
-                Margin="0,20"
-                Source="accept.png"
-                WidthRequest="100"
-                VerticalOptions="CenterAndExpand">
-            </Image>
         </StackLayout>
         </ScrollView>
     </ContentPage.Content>

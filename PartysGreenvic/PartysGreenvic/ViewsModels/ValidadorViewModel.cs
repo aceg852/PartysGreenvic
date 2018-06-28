@@ -67,7 +67,24 @@ namespace PartysGreenvic.ViewsModels
                 "Aceptar");
             this.isRunning = false;
             this.isEnabled = true;
+            this.rut = string.Empty;
         }
+        public ICommand QRCommand
+        {
+            get { return new RelayCommand(QR); }
+        }
+
+        private async void QR()
+        {
+            this.isRunning = true;
+            this.isEnabled = false;
+            //Abrir Para Leer QR
+
+            this.isRunning = true;
+            this.isEnabled = false;
+            this.rut = string.Empty;
+        }
+
         public ICommand NombreCommand
         {
             get
