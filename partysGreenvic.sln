@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartysGreenvic.Android", "P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartysGreenvic.iOS", "PartysGreenvic\PartysGreenvic.iOS\PartysGreenvic.iOS.csproj", "{41F33714-7190-44BC-9C0B-57D20603E5BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartysGreenvic", "PartysGreenvic\PartysGreenvic\PartysGreenvic.csproj", "{63E4555E-CFBA-4100-806D-EB49B1701B88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartysGreenvic", "PartysGreenvic\PartysGreenvic\PartysGreenvic.csproj", "{63E4555E-CFBA-4100-806D-EB49B1701B88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
