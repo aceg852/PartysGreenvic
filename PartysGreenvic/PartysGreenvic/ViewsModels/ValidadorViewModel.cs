@@ -6,13 +6,10 @@ namespace PartysGreenvic.ViewsModels
     using GalaSoft.MvvmLight.Command;
     using PartysGreenvic.Views;
     using System.Windows.Input;
-    using Xamarin.Forms;
     using System.ComponentModel;
-    class ValidadorViewModel : INotifyPropertyChanged
+    using Xamarin.Forms;
+    class ValidadorViewModel : BaseViewModel
     {
-        #region Events
-        public event PropertyChangedEventHandler PropertyChanged;
-        #endregion
         #region Attributes
         private string rut;
         private string nombre;
@@ -22,48 +19,18 @@ namespace PartysGreenvic.ViewsModels
         #region Properties
         public string Rut
         {
-            get
-            {
-                return this.rut;
-            }
-            set
-            {
-                if (this.rut != value)
-                {
-                    this.rut = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(this.Rut)));
-                }
-            }
+            get { return this.rut;}
+            set { SetValue(ref this.rut, value); }
         }
         public bool IsRunning
         {
-            get
-            {
-                return this.isRunning;
-            }
-            set
-            {
-                if (this.isRunning != value)
-                {
-                    this.isRunning = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(this.IsRunning)));
-                }
-            }
+            get { return this.isRunning; }
+            set { SetValue(ref this.isRunning, value); }
         }
         public bool IsEnabled
         {
-            get
-            {
-                return this.isEnabled;
-            }
-            set
-            {
-                if (this.isEnabled != value)
-                {
-                    this.isEnabled = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(this.IsEnabled)));
-                }
-            }
+            get { return this.isEnabled; }
+            set { SetValue(ref this.isEnabled, value); }
         }
         #endregion
         #region Constructors
