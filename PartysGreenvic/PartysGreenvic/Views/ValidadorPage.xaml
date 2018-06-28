@@ -59,7 +59,8 @@
                     IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                     Margin="20,0"
                     Text="Escanear QR"
-                    TextColor="White">
+                    TextColor="White"
+                    x:Name="btnQR">
                 </Button>
             </Grid>
             <ActivityIndicator
@@ -77,6 +78,7 @@
                 Margin="30,0"
                 Text="Verificar"
                 TextColor="White"
+                x:Name="btnCheck"
                 >
             </Button>
             <Label
