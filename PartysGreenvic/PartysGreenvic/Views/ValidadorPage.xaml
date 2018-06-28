@@ -49,7 +49,7 @@
                 WidthRequest="10">
             </ActivityIndicator>
             <Button
-                Command="{Binding RutCommand}"
+                Command="{Binding CheckCommand}"
                 VerticalOptions="CenterAndExpand"
                 BackgroundColor="Navy"
                 BorderRadius="10"

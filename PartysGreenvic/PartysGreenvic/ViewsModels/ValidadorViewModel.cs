@@ -29,14 +29,15 @@ namespace PartysGreenvic.ViewsModels
         }
         #endregion
         #region Commands
-        public ICommand RutCommand
+        public ICommand CheckCommand
         {
             get
             {
-                return new RelayCommand(Rut);
+                return new RelayCommand(Check);
             }
         }
-        private async void Rut()
+
+        private async void Check()
         {
             if (string.IsNullOrEmpty(Rut))
             {
@@ -46,7 +47,9 @@ namespace PartysGreenvic.ViewsModels
                     "Aceptar");
                 return;
             }
+
         }
+
         public ICommand NombreCommand
         {
             get
