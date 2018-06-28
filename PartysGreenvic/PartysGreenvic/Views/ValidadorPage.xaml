@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PartysGreenvic"
+             x:Class="PartysGreenvic.Views.ValidadorPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Fiesta Temporada 2017-2018">
+    <ContentPage.Content>
+        <ScrollView
+            BindingContext="{Binding Validador}">
+        <StackLayout
+            Padding="5"
+            VerticalOptions="CenterAndExpand">
+            <Image
+                VerticalOptions="CenterAndExpand"
+                Margin="0,20"
+                Source="logo.png"
+                WidthRequest="200">
+            </Image>
+            <Grid
+                VerticalOptions="CenterAndExpand"
+                Margin="35,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    Text="Rut"
+                    VerticalOptions="CenterAndExpand">
+                </Label>
+                <Entry
+                    PlaceholderColor="Black"
+                    TextColor="Black"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Keyboard="Numeric"
+                    Placeholder="Ingrese Rut a Verificar..."
+                    Text="{Binding Rut, Mode=TwoWay}"
+                    VerticalOptions="CenterAndExpand">
+                </Entry>
+            </Grid>
+            <ActivityIndicator
+                IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                VerticalOptions="CenterAndExpand"
+                WidthRequest="10">
+            </ActivityIndicator>
+            <Button
+                Command="{Binding RutCommand}"
+                VerticalOptions="CenterAndExpand"
+                BackgroundColor="Navy"
+                BorderRadius="10"
+                HeightRequest="46"
+                Margin="30,0"
+                Text="Verificar"
+                TextColor="White"
+                >
+            </Button>
+            <Label
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalTextAlignment="Center"
+                Text="{Binding NombreCommand}"
+                VerticalOptions="CenterAndExpand">
+            </Label>
+            <Image
+                
+                Margin="0,20"
+                Source="accept.png"
+                WidthRequest="100"
+                VerticalOptions="CenterAndExpand">
+            </Image>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
