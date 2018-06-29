@@ -103,6 +103,7 @@
                 da.Delete(model);
             }
         }
+        //Guarda Toda Lista
         public void Save<T>(List<T> list) where T : InvalidCastException
         {
             using (var da = new DataAccess())

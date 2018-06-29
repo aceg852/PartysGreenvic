@@ -6,6 +6,10 @@ namespace PartysGreenvic.ViewsModels
 {
     class MainViewModel
     {
+        #region Propierties
+
+
+        #endregion
         #region ViewModels
 
         public ValidadorViewModel Validador
