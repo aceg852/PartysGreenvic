@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using Models;
+    using Views;
     using Helpers;
     class MainViewModel
     {
@@ -23,6 +24,11 @@
         #region ViewModels
 
         public ValidadorViewModel Validador
+        {
+            get;
+            set;
+        }
+        public EmpleadoViewsModel Empleados
         {
             get;
             set;

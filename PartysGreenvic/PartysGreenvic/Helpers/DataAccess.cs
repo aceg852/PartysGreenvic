@@ -34,7 +34,11 @@
         {
             return connection.Table<Empleado>().FirstOrDefault(c => c.ID == ID);
         }
-
+        public List<Empleado> GetEmpleados()
+        {
+            return connection.Table<Empleado>().OrderBy(c => c.Nombre).ToList();
+        }
+       
 
 
 

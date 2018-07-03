@@ -15,6 +15,12 @@ namespace PartysGreenvic.Views
 		public ValidadorPage ()
 		{
 			InitializeComponent ();
+            btnEmpleado.Clicked += BtnEmpleado_Clicked;
 		}
-	}
+
+        private async void BtnEmpleado_Clicked(object sender, EventArgs e)
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new NuevoEmpleado());
+        }
+    }
 }
