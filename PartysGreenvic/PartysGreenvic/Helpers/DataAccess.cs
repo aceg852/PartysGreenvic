@@ -18,6 +18,32 @@
             this.connection = new SQLiteConnection(config.Platform, Path.Combine(config.DirectoryBD, "PartysGreenvic.db3"));
             connection.CreateTable<UserLocal>();
         }
+        public void InsertarEmpleado(Empleado empleado)
+        {
+            this.connection.Insert(empleado);
+        }
+        public void BorrarEmpleado(Empleado empleado)
+        {
+            this.connection.Delete(empleado);
+        }
+        public void ActualizarEmpleado(Empleado empleado)
+        {
+            this.connection.Update(empleado);
+        }
+        public Empleado GetEmpleado(int ID)
+        {
+            return connection.Table<Empleado>().FirstOrDefault(c => c.ID == ID);
+        }
+
+
+
+
+
+
+
+
+
+
         public void Insert<T>(T model)
         {
             this.connection.Insert(model);

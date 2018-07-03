@@ -10,6 +10,10 @@ namespace PartysGreenvic.ViewsModels
     using Xamarin.Forms;
     class ValidadorViewModel : BaseViewModel
     {
+        //#region Services
+        //private ApiService apiService;
+        //#endregion
+
         #region Attributes
         private string rut;
         private string nombre;
@@ -61,10 +65,21 @@ namespace PartysGreenvic.ViewsModels
             }
             this.isRunning = true;
             this.isEnabled = false;
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //var user = await this.apiService.GetUserByEmail(apiSecurity, "/api", "/Users/GetUserByEmail", this.Rut);
+            //var userLocal = Converter.ToUserLocal(user);
+
+            //var mainViewModel = MainViewModel.GetInstance();
+            //mainViewModel.User = userLocal;
+
+
             await Application.Current.MainPage.DisplayAlert(
                 "Invitación",
                 "Persona Autorizada",
                 "Aceptar");
+
+
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             this.isRunning = false;
             this.isEnabled = true;
             this.rut = string.Empty;

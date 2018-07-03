@@ -6,6 +6,12 @@
     using Helpers;
     class DataService
     {
+
+
+
+
+
+
         public bool DeleteAll<T>() where T : class
         {
             try
