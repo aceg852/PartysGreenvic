@@ -45,10 +45,10 @@
                     TextColor="Black"
                     Grid.Row="0"
                     Grid.Column="1"
-                    Keyboard="Numeric"
                     Placeholder="Ingrese Rut a Verificar..."
                     Text="{Binding Rut, Mode=TwoWay}"
-                    VerticalOptions="CenterAndExpand">
+                    VerticalOptions="CenterAndExpand"
+                    x:Name="txtRut">
                 </Entry>
                 <Button
                     Command="{Binding QRCommand}"

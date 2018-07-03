@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PartysGreenvic.Views.NuevoEmpleado">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout Padding="10" Spacing="10">
+                <Label Text="Agregar Empleados"
+                Font="24"
+                HorizontalOptions="Center"
+                   TextColor="Black">
+                </Label>
+                <Entry
+                    x:Name="txtNombre"
+                    Placeholder="Ingrese Nombre"
+                ></Entry>
+                <Entry 
+                x:Name="txtRut"
+                Placeholder="Ingrese Rut sin puntos">
+                </Entry>
+                <Button
+                    x:Name="btnAgregar"
+                    Text="Agregar"
+                    HorizontalOptions="Center">
+                </Button>
+                <ListView 
+                x:Name="ListDatos"
+                ></ListView>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
