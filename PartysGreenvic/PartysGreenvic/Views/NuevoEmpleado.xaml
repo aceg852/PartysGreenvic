@@ -23,11 +23,39 @@
                 x:Name="txtRut"
                 Placeholder="Rut sin puntos ni guión">
                 </Entry>
-                <Button
-                    x:Name="btnAgregar"
-                    Text="Agregar"
-                    HorizontalOptions="Center">
-                </Button>
+                <Grid
+                        VerticalOptions="CenterAndExpand"
+                        Margin="35,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button
+                        BackgroundColor="Navy"
+                        BorderRadius="10"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HeightRequest="46"
+                        Text="Agregar"
+                        TextColor="White"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        x:Name="btnAgregar">
+                    </Button>
+                    <Button
+                        BackgroundColor="DarkRed"
+                        BorderRadius="10"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        HeightRequest="46"
+                        HorizontalOptions="Center"
+                        TextColor="White"
+                        Text="Refrescar"
+                        VerticalOptions="CenterAndExpand"
+                        x:Name="btnRefrescar">
+                    </Button>
+                </Grid>
+                
                 <ScrollView>
                     <StackLayout>
                         <ListView 

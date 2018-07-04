@@ -4,17 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+
 
 namespace PartysGreenvic.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    using Xamarin.Forms;
+    using Xamarin.Forms.Xaml;
+    using Helpers;
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class QRPage : ContentPage
 	{
-		public QRPage ()
+        public QRPage ()
 		{
-			InitializeComponent ();
-		}
+            InitializeComponent ();
+        }
+
 	}
 }

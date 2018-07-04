@@ -5,24 +5,14 @@
              x:Class="PartysGreenvic.Views.ValidadorPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              Title="Fiesta Temporada 2017-2018">
- 
     <ContentPage.Content>
-        <ScrollView
-            BindingContext="{Binding Validador}">
+        <ScrollView>
             <StackLayout>
                 <Button
                     BackgroundColor="Black"
-                    BorderRadius="10"
-                    HeightRequest="46"
-                    Text=""
-                    TextColor="White"
                     VerticalOptions="CenterAndExpand"
                     x:Name="btnEmpleado">
-
                 </Button>
-                <StackLayout
-                    Padding="5"
-                    VerticalOptions="CenterAndExpand">
                     <Image
                         VerticalOptions="CenterAndExpand"
                         Margin="0,20"
@@ -56,6 +46,23 @@
                             VerticalOptions="CenterAndExpand"
                             x:Name="txtRut">
                         </Entry>
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        Text="Imagen QR"
+                        VerticalTextAlignment="Center"
+                    ></Label>
+                    <Button
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Text="Escanear Cédula"
+                        BorderRadius="10"
+                        BackgroundColor="DarkGreen"
+                        HeightRequest="40"
+                        VerticalOptions="CenterAndExpand"
+                        x:Name="btnEscanear"></Button>
                     </Grid> 
                     <Button
                         VerticalOptions="CenterAndExpand"
@@ -69,7 +76,6 @@
                         x:Name="btnCheck"
                       >
                     </Button>
-                </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

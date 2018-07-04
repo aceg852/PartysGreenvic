@@ -20,7 +20,16 @@ namespace PartysGreenvic.Views
             this.txtRut.MaxLength = 8;
             this.txtNombre.MaxLength = 40;
             btnAgregar.Clicked += BtnAgregar_Clicked;
+            btnRefrescar.Clicked += BtnRefrescar_Clicked;
             ListDatos.ItemSelected += ListDatos_ItemSelected;
+            using (var datos = new DataAccess())
+            {
+                ListDatos.ItemsSource = datos.GetEmpleados();
+            }
+        }
+
+        private void BtnRefrescar_Clicked(object sender, EventArgs e)
+        {
             using (var datos = new DataAccess())
             {
                 ListDatos.ItemsSource = datos.GetEmpleados();
@@ -29,10 +38,6 @@ namespace PartysGreenvic.Views
         private async void ListDatos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             await Navigation.PushAsync(new EdithPage((Empleado)e.SelectedItem));
-            using (var datos = new DataAccess())
-            {
-                ListDatos.ItemsSource = datos.GetEmpleados();
-            }
         }
         private async void BtnAgregar_Clicked(object sender, EventArgs e)
         {
@@ -51,7 +56,10 @@ namespace PartysGreenvic.Views
             try
             {
                 if (this.txtRut.MaxLength < 7)
+                {
+                    await DisplayAlert("Error STR<7", "Rut Incorrecto", "Aceptar");
                     return;
+                }
                 //Digito Verificador
                 RutGlobal = this.txtRut.Text;
                 int suma = 0;
@@ -123,6 +131,8 @@ namespace PartysGreenvic.Views
                 datos.InsertarEmpleado(empleado);
                 ListDatos.ItemsSource = datos.GetEmpleados();
             }
+            this.txtRut.Text = string.Empty;
+            this.txtNombre.Text = string.Empty;
         }
     }
 }
