@@ -68,7 +68,7 @@ namespace PartysGreenvic.ViewsModels
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //var user = await this.apiService.GetUserByEmail(apiSecurity, "/api", "/Users/GetUserByEmail", this.Rut);
             //var userLocal = Converter.ToUserLocal(user);
-
+            
             //var mainViewModel = MainViewModel.GetInstance();
             //mainViewModel.User = userLocal;
 

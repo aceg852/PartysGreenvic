@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PartysGreenvic.EdithPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Editar Datos Invitado">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout
+                    Padding="5"
+                    VerticalOptions="CenterAndExpand">
+                    <Image
+                        VerticalOptions="CenterAndExpand"
+                        Margin="0,20"
+                        Source="logo.png"
+                        WidthRequest="70">
+                    </Image>
+                    <Grid
+                        VerticalOptions="CenterAndExpand"
+                        Margin="35,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            FontAttributes="Bold"
+                            FontSize="Large"
+                            Text="Rut"
+                            VerticalOptions="CenterAndExpand">
+                        </Label>
+                        <Entry
+                            TextColor="Black"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Placeholder="Ingrese Rut"
+                            VerticalOptions="CenterAndExpand"
+                            x:Name="txtRut">
+                        </Entry>
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            FontAttributes="Bold"
+                            FontSize="Large"
+                            Text="Rut"
+                            VerticalOptions="CenterAndExpand">
+                        </Label>
+                        <Entry  
+                            TextColor="Black"
+                            Grid.Row="1"
+                            Placeholder="Ingrese Nombre"
+                            Grid.Column="1"
+                            VerticalOptions="CenterAndExpand"
+                            x:Name="txtNombre">
+                        </Entry>
+                    </Grid>
+                    <Button
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="Navy"
+                        BorderRadius="10"
+                        HeightRequest="46"
+                        Margin="30,0"
+                        Text="Guardar"
+                        TextColor="White"
+                        x:Name="btnGuardar">
+                    </Button>
+                    <Button
+                        VerticalOptions="CenterAndExpand"
+                        BorderRadius="10"
+                        HeightRequest="46"
+                        BackgroundColor="DarkGreen"
+                       
+                        Margin="30,0"
+                        Text="Borrar"
+                        TextColor="White"
+                        x:Name="btnBorrar">
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -16,12 +16,21 @@ namespace PartysGreenvic.Views
 		public NuevoEmpleado ()
 		{
 			InitializeComponent ();
+            this.txtRut.MaxLength = 8;
+            this.txtNombre.MaxLength = 40;
             btnAgregar.Clicked += BtnAgregar_Clicked;
+            ListDatos.ItemSelected += ListDatos_ItemSelected;
             using (var datos = new DataAccess())
             {
                 ListDatos.ItemsSource = datos.GetEmpleados();
             }
-		}
+        }
+
+        private void ListDatos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Navigation.PushAsync(new EdithPage((Empleado)e.SelectedItem));   
+        }
+
         private async void BtnAgregar_Clicked(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtNombre.Text))

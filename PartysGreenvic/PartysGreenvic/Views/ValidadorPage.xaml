@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PartysGreenvic"
@@ -21,86 +21,89 @@
 
                 </Button>
                 <StackLayout
-            Padding="5"
-            VerticalOptions="CenterAndExpand">
+                    Padding="5"
+                    VerticalOptions="CenterAndExpand">
                     <Image
-                VerticalOptions="CenterAndExpand"
-                Margin="0,20"
-                Source="logo.png"
-                WidthRequest="200">
+                        VerticalOptions="CenterAndExpand"
+                        Margin="0,20"
+                        Source="logo.png"
+                        WidthRequest="200">
                     </Image>
                     <Grid
-                VerticalOptions="CenterAndExpand"
-                Margin="35,0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="2*"/>
-                        </Grid.ColumnDefinitions>
+                        VerticalOptions="CenterAndExpand"
+                        Margin="35,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
                         <Label
-                    Grid.Row="0"
-                    Grid.Column="0"
-                    FontAttributes="Bold"
-                    FontSize="Large"
-                    Text="Rut"
-                    VerticalOptions="CenterAndExpand">
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            FontAttributes="Bold"
+                            FontSize="Large"
+                            Text="Rut"
+                            VerticalOptions="CenterAndExpand">
                         </Label>
                         <Label
-                    Grid.Row="1"
-                    Grid.Column="0"
-                    FontAttributes="Bold"
-                    FontSize="Large"
-                    Text="Por QR"
-                    VerticalOptions="CenterAndExpand">
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            FontAttributes="Bold"
+                            
+                            FontSize="Large"
+                            Text="Por QR"
+                            VerticalOptions="CenterAndExpand">
                         </Label>
                         <Entry
-                    PlaceholderColor="Black"
-                    TextColor="Black"
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    Placeholder="Ingrese Rut a Verificar..."
-                    Text="{Binding Rut, Mode=TwoWay}"
-                    VerticalOptions="CenterAndExpand"
-                    x:Name="txtRut">
+                            PlaceholderColor="Black"
+                            TextColor="Black"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            MaxLength="8"
+                            Keyboard="Numeric"
+                            Placeholder="Ingrese Rut a Verificar..."
+                            Text="{Binding Rut, Mode=TwoWay}"
+                            VerticalOptions="CenterAndExpand"
+                            x:Name="txtRut">
                         </Entry>
                         <Button
-                    BackgroundColor="DarkGreen"
-                    BorderRadius="10"
-                    Command="{Binding QRCommand}"
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    HeightRequest="46"
-                    IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                    Text="Escanear Carnet"
-                    TextColor="White"
-                    VerticalOptions="CenterAndExpand"
-                    x:Name="btnQR">
+                            BackgroundColor="DarkGreen"
+                            BorderRadius="10"
+                            Command="{Binding QRCommand}"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            HeightRequest="46"
+                            IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                            Text="Escanear Carnet"
+                            TextColor="White"
+                            VerticalOptions="CenterAndExpand"
+                            x:Name="btnQR">
                         </Button>
-                    </Grid>
+                    </Grid> 
                     <ActivityIndicator
-                IsRunning="{Binding IsRunning, Mode=TwoWay}"
-                VerticalOptions="CenterAndExpand"
-                WidthRequest="10">
+                        IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="10">
                     </ActivityIndicator>
                     <Button
-                Command="{Binding CheckCommand}"
-                VerticalOptions="CenterAndExpand"
-                BackgroundColor="Navy"
-                BorderRadius="10"
-                HeightRequest="46"
-                IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                Margin="30,0"
-                Text="Verificar"
-                TextColor="White"
-                x:Name="btnCheck"
-                >
+                
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="Navy"
+                        BorderRadius="10"
+                        HeightRequest="46"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        Margin="30,0"
+                        Text="Verificar"
+                        TextColor="White"
+                        x:Name="btnCheck"
+                      >
                     </Button>
                     <Label
-                TextColor="Black"
-                FontAttributes="Bold"
-                FontSize="Large"
-                HorizontalTextAlignment="Center"
-                Text="{Binding NombreCommand}"
-                VerticalOptions="CenterAndExpand">
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding NombreCommand}"
+                        VerticalOptions="CenterAndExpand">
                     </Label>
                 </StackLayout>
             </StackLayout>

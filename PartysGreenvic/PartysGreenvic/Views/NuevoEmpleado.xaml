@@ -18,7 +18,8 @@
                     x:Name="txtNombre"
                     Placeholder="Ingrese Nombre"
                 ></Entry>
-                <Entry 
+                <Entry
+                    Keyboard="Numeric"
                 x:Name="txtRut"
                 Placeholder="Ingrese Rut sin puntos">
                 </Entry>

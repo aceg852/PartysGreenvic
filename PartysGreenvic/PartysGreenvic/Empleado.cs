@@ -7,13 +7,13 @@ namespace PartysGreenvic
     public class Empleado
     {
         [PrimaryKey, AutoIncrement ]
-        public int ID { get; set; }
+        public int IDEmpleado { get; set; }
         public string Rut { get; set; }
         public string Nombre { get; set; }
 
         public override string ToString()
         {
-            return string.Format("{0} {1} {2}", ID, Rut, Nombre);
+            return string.Format("{0} {1} {2}", IDEmpleado, Rut, Nombre);
         }
     }
 }
