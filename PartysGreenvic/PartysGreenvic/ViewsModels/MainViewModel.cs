@@ -9,6 +9,9 @@
     class MainViewModel
     {
         #region Propierties
+
+       
+
         public TokenResponse Token
         {
             get;
@@ -54,5 +57,6 @@
             return instance;
         }
         #endregion
+       
     }
 }

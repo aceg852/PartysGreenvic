@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿
+
+
+
 
 namespace PartysGreenvic.Views
 {
-    using Newtonsoft.Json;
+    using System;
+    using Xamarin.Forms;
+    using Xamarin.Forms.Xaml;
     using PartysGreenvic.Helpers;
-    using System.Data;
+    using SQLite.Net;
+    using System.IO;
 
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ValidadorPage : ContentPage
@@ -19,11 +19,11 @@ namespace PartysGreenvic.Views
 		public ValidadorPage ()
 		{
 			InitializeComponent ();
+            
             this.txtRut.MaxLength = 8;
             this.btnEmpleado.Clicked += BtnEmpleado_Clicked;
             this.btnCheck.Clicked += BtnCheck_Clicked;
-		}
-
+        }
 
         private async void BtnCheck_Clicked(object sender, EventArgs e)
         {
@@ -31,6 +31,13 @@ namespace PartysGreenvic.Views
             {
                 try
                 {
+                    #region ValidarRut
+
+                    
+                    if (string.IsNullOrEmpty(this.txtRut.Text))
+                        return;
+                    if (this.txtRut.MaxLength < 7)
+                        return;
                     //Digito Verificador
                     RutGlobal = this.txtRut.Text;
                     int suma = 0;
@@ -91,21 +98,26 @@ namespace PartysGreenvic.Views
                     this.txtRut.Text = string.Empty;
                     return;
                 }
-
-                await DisplayAlert("", RutGlobal, "Aceptar");
-                Label lbResults = new Label();
-                
-                //ListView lis = new ListView();
-                //using (var datos = new DataAccess())
-                //{
-                //    DataTable tab = new DataTable();
-                //    tab.ItemsSource = tab[0].datos.GetEmpleado(RutGlobal);
-                //}
-
-                using (var datos = new DataAccess())
+                #endregion
+                //await DisplayAlert("", RutGlobal, "Aceptar");
+                using (var conexion2 = new DataAccess())
                 {
-                    //datos.BuscarEmpleado(RutGlobal);
+
+                    string bdpath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "PartysGreenvic.db3");
+                    var conexion = new DataAccess();
+                    //var datos = conexion.GetEmpleado(RutGlobal);
+                    var datoss = conexion.GetEmpleado(RutGlobal);
+                    var nombre = datoss.Nombre;
+                    //var invitado = datos.Rut.Where(x => x.Rut == RutGlobal);
+                    if (datoss == null)
+                    {
+                        await DisplayAlert("Acceso Denegado", "Esta persona no tiene Invitación vigente", "Aceptar");
+                        return;
+                    }
+                    await DisplayAlert("Acceso Permitido", nombre+" con acceso Autorizado", "Aceptar");
+                    return;
                 }
+
             }
             catch (Exception ex)
             {
@@ -117,31 +129,7 @@ namespace PartysGreenvic.Views
         {
             await Application.Current.MainPage.Navigation.PushAsync(new NuevoEmpleado());
         }
-        private void trasformar_rut()
-        {
 
-            string sTexto = this.txtRut.Text;
-            string sRut;
-            sTexto = sTexto.Replace("'", "-").ToString();
-            sTexto = sTexto.Remove(sTexto.Length - 2);
-            sRut = sTexto;
-            sTexto = sTexto.Remove(sTexto.Length - 2);
-            Convert.ToInt64(sTexto);
-            if (Convert.ToInt64(sTexto) >= 10000000)
-            {
-                sRut = sRut.Substring(2, 10);
-                txtRut.Text = sRut;
-            }
-            else
-            {
-                sRut = sRut.Substring(3, 9);
-                txtRut.Text = sRut;
-            }
-        }
-
-        private void txtRut_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-    }
+        
+    } 
 }

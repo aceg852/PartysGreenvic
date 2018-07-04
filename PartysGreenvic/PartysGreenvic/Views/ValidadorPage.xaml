@@ -44,15 +44,6 @@
                             Text="Rut"
                             VerticalOptions="CenterAndExpand">
                         </Label>
-                        <Label
-                            Grid.Row="1"
-                            Grid.Column="0"
-                            FontAttributes="Bold"
-                            
-                            FontSize="Large"
-                            Text="Por QR"
-                            VerticalOptions="CenterAndExpand">
-                        </Label>
                         <Entry
                             PlaceholderColor="Black"
                             TextColor="Black"
@@ -65,27 +56,8 @@
                             VerticalOptions="CenterAndExpand"
                             x:Name="txtRut">
                         </Entry>
-                        <Button
-                            BackgroundColor="DarkGreen"
-                            BorderRadius="10"
-                            Command="{Binding QRCommand}"
-                            Grid.Row="1"
-                            Grid.Column="1"
-                            HeightRequest="46"
-                            IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                            Text="Escanear Carnet"
-                            TextColor="White"
-                            VerticalOptions="CenterAndExpand"
-                            x:Name="btnQR">
-                        </Button>
                     </Grid> 
-                    <ActivityIndicator
-                        IsRunning="{Binding IsRunning, Mode=TwoWay}"
-                        VerticalOptions="CenterAndExpand"
-                        WidthRequest="10">
-                    </ActivityIndicator>
                     <Button
-                
                         VerticalOptions="CenterAndExpand"
                         BackgroundColor="Navy"
                         BorderRadius="10"
@@ -97,14 +69,6 @@
                         x:Name="btnCheck"
                       >
                     </Button>
-                    <Label
-                        TextColor="Black"
-                        FontAttributes="Bold"
-                        FontSize="Large"
-                        HorizontalTextAlignment="Center"
-                        Text="{Binding NombreCommand}"
-                        VerticalOptions="CenterAndExpand">
-                    </Label>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

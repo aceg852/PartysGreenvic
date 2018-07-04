@@ -16,6 +16,7 @@ namespace PartysGreenvic.ViewsModels
 
         #region Attributes
         private string rut;
+        string _filter;
         private string nombre;
         private bool isRunning;
         private bool isEnabled;
@@ -84,33 +85,10 @@ namespace PartysGreenvic.ViewsModels
             this.isEnabled = true;
             this.rut = string.Empty;
         }
-        public ICommand QRCommand
-        {
-            get { return new RelayCommand(QR); }
-        }
 
-        private async void QR()
-        {
-            this.isRunning = true;
-            this.isEnabled = false;
-            //Abrir Para Leer QR
 
-            this.isRunning = true;
-            this.isEnabled = false;
-            this.rut = string.Empty;
-        }
-
-        public ICommand NombreCommand
-        {
-            get
-            {
-                return new RelayCommand(NombreC);
-            }
-            set { }
-        }
-        private void NombreC()
-        {
-        }
+       
+        
         #endregion
     }
 }

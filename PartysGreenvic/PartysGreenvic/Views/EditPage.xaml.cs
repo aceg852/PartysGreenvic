@@ -19,6 +19,8 @@ namespace PartysGreenvic
 		public EdithPage (Empleado empleado)
 		{
 			InitializeComponent();
+            this.txtRut.MaxLength = 12;
+            this.txtNombre.MaxLength = 40;
             this.empleado = empleado;
             btnGuardar.Clicked += BtnGuardar_Clicked;
             btnBorrar.Clicked += BtnBorrar_Clicked;

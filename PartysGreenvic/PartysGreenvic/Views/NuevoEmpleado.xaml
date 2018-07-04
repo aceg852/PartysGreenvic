@@ -21,17 +21,21 @@
                 <Entry
                     Keyboard="Numeric"
                 x:Name="txtRut"
-                Placeholder="Ingrese Rut sin puntos">
+                Placeholder="Rut sin puntos ni guión">
                 </Entry>
                 <Button
                     x:Name="btnAgregar"
                     Text="Agregar"
                     HorizontalOptions="Center">
                 </Button>
-                <ListView 
-                x:Name="ListDatos"
-                ></ListView>
-        </StackLayout>
+                <ScrollView>
+                    <StackLayout>
+                        <ListView 
+                            x:Name="ListDatos"
+                        ></ListView>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
